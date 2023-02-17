@@ -12,12 +12,11 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 @Order(1)
-public class beforeAspects{
+public class BeforeAspects{
 	
 	@Before("sniaper.project.MySimpleProjectParserForWork.aspects.RequestsAspect.show()")
 	public void beforeGetInfo(JoinPoint joinPoint) {
-		System.out.println(sniaper.project.MySimpleProjectParserForWork.
-				aspects.RequestsAspect.getedLog("Запрос информации..."));
+		System.out.println(RequestsAspect.getedLog("Запрос информации..."));
 		
 		MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
 		try {
